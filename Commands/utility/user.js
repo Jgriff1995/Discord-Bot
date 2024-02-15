@@ -1,3 +1,5 @@
+// This is a simple command that provides information about the server.
+
 const { SlashCommandBuilder } = require('discord.js');
 
 module.exports = {
