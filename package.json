@@ -5,16 +5,20 @@
   "main": "index.js",
   "scripts": {
     "start": "node deploy-commands.js && node index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "discord.js": "^14.14.1",
-    "dotenv": "^16.4.4"
+    "dotenv": "^16.4.4",
+    "eslint-config-wesbos": "^4.0.1"
   },
   "devDependencies": {
-    "eslint": "^8.56.0"
+    "eslint": "^8.56.0",
+    "prettier": "^3.2.5"
   }
 }
