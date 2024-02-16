@@ -17,6 +17,11 @@ const logger = winston.createLogger({
   ],
 });
 
+let teamName = 'Power Bottoms';
+let taskName = 'Tombs of Amascut: Recieve one purple!';
+let pointValue = 10;
+let competitionName = 'Moonclan Bingo!';
+
 const {
   SlashCommandBuilder,
   EmbedBuilder,
@@ -79,8 +84,8 @@ module.exports = {
 
     const testEmbed = {
       type: "rich",
-      title: `Power Bottoms rolled the dice..`,
-      description: `The Power Bottoms must complete: **Tombs of Amascut: Recieve one purple!**`,
+      title: `${teamName} rolled the dice..`,
+      description: `The ${teamName} must complete: **${taskName}**`,
       color: 0x00FFFF,
       fields: [
         {
@@ -90,7 +95,7 @@ module.exports = {
         },
         {
           name: `Point value`,
-          value: `10`
+          value: `${pointValue}`
         }
       ],
       image: {
@@ -102,7 +107,7 @@ module.exports = {
       },
       timestamp: new Date().toISOString(),
       footer: {
-        text: `Competition_Name: Team_Name: Task_Name: Point_Value`,
+        text: `Competition_Name: ${competitionName} Team_Name: ${teamName} Task_Name: ${taskName} Point_Value: ${pointValue}`,
         icon_url: `https://i.imgur.com/3Wlo2Tz.jpeg`,
       },
     };
