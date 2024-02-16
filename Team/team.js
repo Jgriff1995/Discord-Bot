@@ -1,48 +1,7 @@
-// Purpose: This file contains the class for the team object.
-
 const fs = require('fs');
 const teamFilePath = './teams.json';
 
-class TeamManager {
-    constructor() {
-        this.teams = this.loadTeams();
-    }
-
-    loadTeams() {
-        try {
-            const data = fs.readFileSync(teamFilePath, 'utf8');
-            const teams = JSON.parse(data);
-            return teams.map(team => new Team(team.name, team.icon, team.size, team.members));
-        } catch (error) {
-            console.error('Error loading teams:', error);
-            return [];
-        }
-    }
-
-    saveTeams() {
-        const data = JSON.stringify(this.teams, null, 4);
-        fs.writeFileSync(teamFilePath, data, 'utf8');
-    }
-
-    addTeam(team) {
-        this.teams.push(team);
-        this.saveTeams();
-    }
-
-    removeTeam(teamID) {
-        this.teams = this.teams.filter(team => team.teamID !== teamID);
-        this.saveTeams();
-    }
-
-    // Implement other methods as needed for updating teams, etc.
-}
-
-
-
-
-
-class team {
-
+class Team {
     // Constructor
     constructor(name, size) {
         this.name = name;
@@ -98,7 +57,7 @@ class team {
     // Methods
     moveForward(spaces) {
         if (this.boardLocation + spaces > boardEnd) {
-            console.info("Cannot move forward that far. You have reached the end.");
+            console.info('Cannot move forward that far. You have reached the end.');
         } else {
             this.boardLocation += spaces;
         }
@@ -106,11 +65,10 @@ class team {
 
     moveBackward(spaces) {
         if (this.boardLocation - spaces < 0) {
-            console.info("Cannot move back that far.");
+            console.info('Cannot move back that far.');
         } else {
             this.boardLocation -= spaces;
         }
-
     }
 
     addPoints(points) {
@@ -119,7 +77,9 @@ class team {
 
     removePoints(points) {
         if (this.points - points < 0) {
-            console.info("Cannot remove that many points. You have reached 0 points.");
+            console.info(
+                'Cannot remove that many points. You have reached 0 points.',
+            );
         } else {
             this.points -= points;
         }
@@ -142,7 +102,4 @@ class team {
     toString() {
         return `Team: ${this.name} \nIcon: ${this.icon} \nSize: ${this.size} \nPoints: ${this.points} \nMembers: ${this.members}`;
     }
-
-
 }
-
