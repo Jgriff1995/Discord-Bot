@@ -45,6 +45,6 @@ for (const file of eventFiles) {
 client.login(token);
 
 process.on('SIGINT', () => {
-  console.log('Shutting down the Lunar Bot...');
+  console.info('Shutting down the Lunar Bot...');
   process.exit();
 });

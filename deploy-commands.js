@@ -21,7 +21,7 @@ for (const folder of commandFolders) {
     if ('data' in command && 'execute' in command) {
       commands.push(command.data.toJSON());
     } else {
-      console.log(
+      console.info(
         `[WARNING] The command at ${filePath} is missing a required "data" or "execute" property.`,
       );
     }
@@ -34,17 +34,17 @@ const rest = new REST().setToken(token);
 // and deploy your commands!
 (async () => {
   try {
-    console.log(
+    console.info(
       `Started refreshing ${commands.length} application (/) commands.`,
     );
 
-    // The put method is used to fully refresh all commands in the guild with the current set
+    // The put method is used to fully refresh all commands in the guild with the current set (SET TO GLOBAL - So bot commands can be ran in Moonclan & Test server)
     const data = await rest.put(
-      Routes.applicationGuildCommands(clientId, guildId),
-      { body: commands },
+      Routes.applicationCommands(clientId),
+      { body: commands }
     );
 
-    console.log(
+    console.info(
       `Successfully reloaded ${data.length} application (/) commands.`,
     );
   } catch (error) {
