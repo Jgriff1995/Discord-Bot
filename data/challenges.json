@@ -1,0 +1,18 @@
+[
+    {
+        "tile": 1,
+        "description": "The croc has decide it's time for you to die!",
+        "task": "Defeat Zebak in Tombs of Amascut with your first!",
+        "points": null,
+        "thumbnailUrl": "https://oldschool.runescape.wiki/images/thumb/Lightbearer_detail.png/240px-Lightbearer_detail.png?3576d",
+        "imageUrl": "https://i.imgur.com/tFH54b6.jpeg"
+    },
+    {
+        "tile": 2,
+        "description": "Test your might!",
+        "task": "Fight Kilowo with your shirt off",
+        "points": 200,
+        "thumbnailUrl": "https://oldschool.runescape.wiki/images/thumb/Lightbearer_detail.png/240px-Lightbearer_detail.png?3576d",
+        "imageUrl": "https://i.imgur.com/tFH54b6.jpeg"
+    }
+]
